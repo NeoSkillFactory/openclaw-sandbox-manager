@@ -1,0 +1,28 @@
+name: dev
+description: Development sandbox template with relaxed security for testing
+securityProfile: permissive
+
+environment:
+  workdir: /sandbox/workspace
+  shell: /bin/bash
+  env:
+    SANDBOX_MODE: "true"
+    NODE_ENV: "development"
+    DEBUG: "*"
+
+mounts:
+  - source: ./workspace
+    target: /sandbox/workspace
+    readOnly: false
+  - source: ./shared
+    target: /sandbox/shared
+    readOnly: false
+  - source: ./logs
+    target: /sandbox/logs
+    readOnly: false
+
+hooks:
+  onCreate: []
+  onStart: []
+  onStop: []
+  onDestroy: []

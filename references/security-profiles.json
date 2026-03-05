@@ -1,0 +1,64 @@
+{
+  "profiles": {
+    "default": {
+      "name": "default",
+      "description": "Standard security profile for general-purpose sandboxes",
+      "network": {
+        "allowOutbound": false,
+        "allowInbound": false,
+        "allowedHosts": []
+      },
+      "resources": {
+        "maxMemoryMB": 512,
+        "maxCpuPercent": 50,
+        "maxProcesses": 64,
+        "maxOpenFiles": 256
+      },
+      "filesystem": {
+        "readOnly": ["/usr", "/bin", "/lib"],
+        "writable": ["/tmp", "/home"],
+        "denied": ["/etc/shadow", "/etc/passwd", "/root"]
+      }
+    },
+    "strict": {
+      "name": "strict",
+      "description": "High-security profile for untrusted third-party skills",
+      "network": {
+        "allowOutbound": false,
+        "allowInbound": false,
+        "allowedHosts": []
+      },
+      "resources": {
+        "maxMemoryMB": 256,
+        "maxCpuPercent": 25,
+        "maxProcesses": 16,
+        "maxOpenFiles": 64
+      },
+      "filesystem": {
+        "readOnly": ["/usr", "/bin", "/lib"],
+        "writable": ["/tmp"],
+        "denied": ["/etc", "/root", "/home", "/var"]
+      }
+    },
+    "permissive": {
+      "name": "permissive",
+      "description": "Relaxed profile for trusted internal skills",
+      "network": {
+        "allowOutbound": true,
+        "allowInbound": false,
+        "allowedHosts": ["*"]
+      },
+      "resources": {
+        "maxMemoryMB": 1024,
+        "maxCpuPercent": 80,
+        "maxProcesses": 128,
+        "maxOpenFiles": 512
+      },
+      "filesystem": {
+        "readOnly": ["/usr", "/bin", "/lib"],
+        "writable": ["/tmp", "/home", "/var/tmp"],
+        "denied": ["/etc/shadow", "/root"]
+      }
+    }
+  }
+}

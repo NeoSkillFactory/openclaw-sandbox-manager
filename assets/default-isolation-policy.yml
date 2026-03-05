@@ -1,0 +1,54 @@
+version: "1.0"
+description: Default isolation policy for OpenClaw sandbox environments
+
+isolation:
+  filesystem:
+    mode: restricted
+    allowedPaths:
+      - /sandbox/**
+      - /tmp/**
+    deniedPaths:
+      - /etc/shadow
+      - /etc/passwd
+      - /root/**
+      - /proc/kcore
+
+  network:
+    mode: restricted
+    defaultPolicy: deny
+    rules: []
+
+  process:
+    maxProcesses: 64
+    maxThreads: 128
+    allowFork: true
+    allowExec: true
+    deniedSyscalls:
+      - mount
+      - umount
+      - reboot
+      - swapon
+      - swapoff
+
+  resources:
+    memory:
+      limitMB: 512
+      swapLimitMB: 0
+    cpu:
+      shares: 512
+      quotaPercent: 50
+    io:
+      weight: 100
+      maxReadBps: 104857600
+      maxWriteBps: 52428800
+
+audit:
+  enabled: true
+  logLevel: info
+  events:
+    - sandbox.create
+    - sandbox.start
+    - sandbox.stop
+    - sandbox.destroy
+    - security.violation
+    - resource.limit_exceeded

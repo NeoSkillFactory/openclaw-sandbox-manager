@@ -1,0 +1,24 @@
+name: default
+description: Default sandbox template for general OpenClaw skill execution
+securityProfile: default
+
+environment:
+  workdir: /sandbox/workspace
+  shell: /bin/sh
+  env:
+    SANDBOX_MODE: "true"
+    NODE_ENV: "production"
+
+mounts:
+  - source: ./workspace
+    target: /sandbox/workspace
+    readOnly: false
+  - source: ./shared
+    target: /sandbox/shared
+    readOnly: true
+
+hooks:
+  onCreate: []
+  onStart: []
+  onStop: []
+  onDestroy: []

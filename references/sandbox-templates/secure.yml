@@ -1,0 +1,21 @@
+name: secure
+description: High-security sandbox for untrusted third-party skill execution
+securityProfile: strict
+
+environment:
+  workdir: /sandbox/workspace
+  shell: /bin/sh
+  env:
+    SANDBOX_MODE: "true"
+    NODE_ENV: "production"
+
+mounts:
+  - source: ./workspace
+    target: /sandbox/workspace
+    readOnly: false
+
+hooks:
+  onCreate: []
+  onStart: []
+  onStop: []
+  onDestroy: []

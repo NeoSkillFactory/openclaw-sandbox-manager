@@ -1,0 +1,15 @@
+{
+  "name": "openclaw-sandbox-manager",
+  "version": "1.0.0",
+  "description": "Automated sandboxed environment creation and management for OpenClaw with security isolation",
+  "main": "scripts/sandbox-manager.js",
+  "bin": {
+    "sandbox-manager": "scripts/sandbox-manager.js"
+  },
+  "scripts": {
+    "start": "node scripts/sandbox-manager.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": ["openclaw", "sandbox", "security", "isolation"],
+  "license": "MIT"
+}
