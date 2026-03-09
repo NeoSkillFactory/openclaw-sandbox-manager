@@ -2,20 +2,20 @@
 
 ![Audit](https://img.shields.io/badge/audit%3A%20PASS-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OpenClaw](https://img.shields.io/badge/OpenClaw-skill-orange)
 
-> A skill that creates and manages a sandboxed environment for OpenClaw, isolating system access and third-party skills to prevent potential security risks while 
+> Automated sandboxed environment creation and management for OpenClaw with security isolation.
 
-I need to see what you were working on before the timeout. Let me check the workspace to understand the context:
+## Features
 
-## OpenClaw Marketplace
+- CLI commands: `create`, `start`, `stop`, `destroy`, `list`, `status`
+- Security enforcement via runtime policy configuration
+- Session isolation using filesystem and process boundaries
+- Activity monitoring and audit logging
 
-This skill is available on [ClawHub](https://clawhub.ai) — the OpenClaw skill marketplace.
-Install it in any OpenClaw agent workspace with:
+## GitHub
 
-```bash
-clawhub install openclaw-sandbox-manager
-```
+Source code: [github.com/NeoSkillFactory/openclaw-sandbox-manager](https://github.com/NeoSkillFactory/openclaw-sandbox-manager)
 
-**Recommended price when commercial:** $29 USD
+**Price suggestion:** $29 USD
 
 ## License
 
