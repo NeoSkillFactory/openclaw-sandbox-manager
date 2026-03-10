@@ -15,8 +15,6 @@
 
 Source code: [github.com/NeoSkillFactory/openclaw-sandbox-manager](https://github.com/NeoSkillFactory/openclaw-sandbox-manager)
 
-**Price suggestion:** $29 USD
-
 ## License
 
 MIT © NeoSkillFactory
